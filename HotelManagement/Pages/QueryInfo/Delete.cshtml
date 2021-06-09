@@ -1,0 +1,51 @@
+﻿@page
+@model HotelManagement.Pages.QueryInfo.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Query";
+}
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Delete Query</h4>
+    <hr />
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Query.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Query.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Query.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Query.Message)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Query.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Query.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Query.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Query.Message)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post">
+        <input type="hidden" asp-for="Query.id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index" type="button" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

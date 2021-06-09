@@ -1,0 +1,52 @@
+﻿@page
+@model HotelManagement.Pages.RoomBooking.IndexModel
+
+@{
+    ViewData["Title"] = "Book Room";
+}
+<p>
+    <a asp-page="Create" class="btn btn-secondary">Book Room</a>
+</p>
+<table class="table table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookRoom[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookRoom[0].Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookRoom[0].NumberOfRooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookRoom[0].RoomBookingDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BookRoom)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfRooms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomBookingDate)
+                </td>
+                <td>
+                    <a asp-page="./Edit" type="button" class="btn btn-secondary" asp-route-id="@item.id">Edit</a>
+                    <a asp-page="./Details" type="button" class="btn btn-secondary" asp-route-id="@item.id">Details</a>
+                    <a asp-page="./Delete" type="button" class="btn btn-secondary" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

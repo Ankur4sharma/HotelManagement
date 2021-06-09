@@ -1,0 +1,50 @@
+﻿@page
+@model HotelManagement.Pages.RoomBooking.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Details of Book Room</h4>
+    <hr />
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookRoom.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookRoom.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookRoom.NumberOfRooms)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookRoom.RoomBookingDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.BookRoom.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.BookRoom.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.BookRoom.NumberOfRooms)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.BookRoom.RoomBookingDate)
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.BookRoom.id" type="button" class="btn btn-secondary">Edit</a>
+    <a asp-page="./Index" type="button" class="btn btn-secondary">Back to List</a>
+</div>

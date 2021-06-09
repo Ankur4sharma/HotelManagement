@@ -1,0 +1,39 @@
+﻿@page
+@model HotelManagement.Pages.RoomInfo.CreateModel
+
+@{
+    ViewData["Title"] = "Add Room";
+}
+
+<h4>Add Room</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 col-md-12 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+            <div class="form-group">
+                <label asp-for="Room.RoomType" class="control-label"></label>
+                <input asp-for="Room.RoomType" class="form-control" placeholder="Enter Room Type"/>
+                <span asp-validation-for="Room.RoomType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.RoomNo" class="control-label"></label>
+                <input asp-for="Room.RoomNo" class="form-control" placeholder="Enter Room No"/>
+                <span asp-validation-for="Room.RoomNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.Price" class="control-label"></label>
+                <input asp-for="Room.Price" class="form-control" placeholder="Enter Price"/>
+                <span asp-validation-for="Room.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="Index" type="button" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,52 @@
+﻿@page
+@model HotelManagement.Pages.RoomBooking.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Booked Room";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Delete Booked Room</h4>
+    <hr />
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookRoom.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookRoom.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookRoom.NumberOfRooms)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookRoom.RoomBookingDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.BookRoom.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.BookRoom.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.BookRoom.NumberOfRooms)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.BookRoom.RoomBookingDate)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post">
+        <input type="hidden" asp-for="BookRoom.id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <a asp-page="./Index" type="button" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

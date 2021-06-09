@@ -1,0 +1,45 @@
+﻿@page
+@model HotelManagement.Pages.QueryInfo.EditModel
+
+@{
+    ViewData["Title"] = "Edit Query";
+}
+
+<h4>Edit Query</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 col-md-12 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Query.id" />
+            <div class="form-group">
+                <label asp-for="Query.Name" class="control-label"></label>
+                <input asp-for="Query.Name" class="form-control" />
+                <span asp-validation-for="Query.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Query.Email" class="control-label"></label>
+                <input asp-for="Query.Email" class="form-control" />
+                <span asp-validation-for="Query.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Query.Contact" class="control-label"></label>
+                <input asp-for="Query.Contact" class="form-control" />
+                <span asp-validation-for="Query.Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Query.Message" class="control-label"></label>
+                <input asp-for="Query.Message" class="form-control" />
+                <span asp-validation-for="Query.Message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

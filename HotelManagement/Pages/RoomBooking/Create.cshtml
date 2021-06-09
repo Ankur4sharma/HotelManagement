@@ -1,0 +1,44 @@
+﻿@page
+@model HotelManagement.Pages.RoomBooking.CreateModel
+
+@{
+    ViewData["Title"] = "Book Room";
+}
+<h4>Book Room</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookRoom.Name" class="control-label"></label>
+                <input asp-for="BookRoom.Name" class="form-control" placeholder="Enter Name" />
+                <span asp-validation-for="BookRoom.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookRoom.Contact" class="control-label"></label>
+                <input asp-for="BookRoom.Contact" class="form-control" placeholder="Enter Contact Number"/>
+                <span asp-validation-for="BookRoom.Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookRoom.NumberOfRooms" class="control-label"></label>
+                <input asp-for="BookRoom.NumberOfRooms" class="form-control" placeholder="Enter Number Of Rooms"/>
+                <span asp-validation-for="BookRoom.NumberOfRooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookRoom.RoomBookingDate" class="control-label"></label>
+                <input asp-for="BookRoom.RoomBookingDate" class="form-control" placeholder="Enter Date"/>
+                <span asp-validation-for="BookRoom.RoomBookingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="Index" type="button" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

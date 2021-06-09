@@ -1,0 +1,50 @@
+﻿@page
+@model HotelManagement.Pages.QueryInfo.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h4>Details</h4>
+    <hr />
+
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Query.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Query.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Query.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Query.Message)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Query.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Query.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Query.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Query.Message)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Query.id">Edit</a>
+    <a asp-page="./Index" type="button" class="btn btn-secondary">Back to List</a>
+</div>
